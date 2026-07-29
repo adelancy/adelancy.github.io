@@ -27,4 +27,4 @@ Some earlier work of mine appears in fluid dynamics research on thin-film flows 
 
 ## Elsewhere
 
-The best way to reach me is by email: [adelancy88@gmail.com](mailto:adelancy88@gmail.com).
+The best way to reach me is by email: [adelancy.blog@gmail.com](mailto:adelancy.blog@gmail.com).
