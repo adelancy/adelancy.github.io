@@ -1,20 +1,18 @@
-# Welcome to Jekyll!
+# Site metadata — the single source of truth for the site.
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# scripts/gen-site-config.js compiles this into data/site.json (imported by the
+# app) and scripts/gen-feed.js uses it to build public/feed.xml. Both run via
+# `npm run gen` on predev/prebuild, so edit this file and restart the dev server.
+#
+# Kept in YAML at the repo root for historical reasons — the site itself is
+# Next.js, not Jekyll.
 
-# Site settings
 title: Adrian Delancy
 email: adelancy88@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
+description: > # folded scalar: newlines below are collapsed into one line
   Software development engineering manager in Seattle, writing about
   software engineering, technical leadership, economics, geometry,
   and learning to fly.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://adelancy.github.io" # the base hostname & protocol for your site
+baseurl: "" # subpath if the site is not served from the domain root
+url: "https://adelancy.github.io" # base hostname & protocol, no trailing slash
 github_username: adelancy
-
-# Build settings
-markdown: kramdown

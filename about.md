@@ -1,7 +1,5 @@
 ---
-layout: page
 title: About
-permalink: /about/
 description: Adrian Delancy — software development engineering manager in Seattle, writing about engineering, leadership, economics, geometry, and aviation.
 ---
 
