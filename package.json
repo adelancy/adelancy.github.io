@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "gen:site": "node scripts/gen-site-config.js",
-    "predev": "npm run gen:site",
+    "gen:feed": "node scripts/gen-feed.js",
+    "gen": "npm run gen:site && npm run gen:feed",
+    "predev": "npm run gen",
     "dev": "next dev",
-    "prebuild": "npm run gen:site",
+    "prebuild": "npm run gen",
     "build": "next build",
     "export": "next export",
     "start": "next start"

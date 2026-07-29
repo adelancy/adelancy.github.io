@@ -16,9 +16,11 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
-# --- Generated site config ---
-# Built from _config.yml by scripts/gen-site-config.js on predev/prebuild.
+# --- Generated at build time (npm run gen) ---
+# Built from _config.yml by scripts/gen-site-config.js.
 data/site.json
+# Built from _config.yml + _posts by scripts/gen-feed.js.
+public/feed.xml
 
 # --- Build output & caches ---
 build/
