@@ -18,8 +18,15 @@ export type PostData = {
   contentHtml?: string
 }
 
+// Only markdown files are posts — this skips .gitkeep and any editor cruft —
+// and an absent _posts directory simply means there is nothing published yet.
+function getPostFileNames(): string[] {
+  if (!fs.existsSync(postsDirectory)) return []
+  return fs.readdirSync(postsDirectory).filter((f) => /\.(md|markdown)$/.test(f))
+}
+
 export function getSortedPostsData(): PostData[] {
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = getPostFileNames()
   const allPostsData = fileNames.map((fileName) => {
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -39,7 +46,7 @@ export function getSortedPostsData(): PostData[] {
 
 export async function getPostData(slug: string): Promise<PostData> {
   // find file that ends with slug (after date)
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = getPostFileNames()
   const fileName = fileNames.find((f) => f.replace(/^[0-9]{4}-[0-9]{2}-[0-9]{2}-/, '').replace(/\.(md|markdown)$/, '') === slug)
   if (!fileName) throw new Error('Post not found: ' + slug)
 
