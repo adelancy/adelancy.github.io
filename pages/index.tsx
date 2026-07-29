@@ -18,7 +18,7 @@ const TOPICS = [
     body: 'Incentives and markets — and how much of an engineering organization they quietly explain.'
   },
   {
-    title: 'Mathematics & Geometry',
+    title: 'Geometry',
     body: 'The part of my physics and math background I keep returning to for its own sake.'
   },
   {
