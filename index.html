@@ -4,19 +4,38 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">{{ site.title }}</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <p>
+    Software development engineering manager in Seattle, Washington. I write about building
+    software, leading the teams that build it, and a few things I think about on my own time —
+    economics, geometry, and flying.
+  </p>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <p>
+    My work sits at the intersection of building software and building the teams that build it.
+    Away from work I'm a private pilot currently training for an instrument rating, and a lapsed
+    physicist who never quite got over geometry.
+    <a href="{{ "/about/" | prepend: site.baseurl }}">More about me →</a>
+  </p>
+
+  <h2 class="page-heading">Posts</h2>
+
+  {% if site.posts.size == 0 %}
+    <p>Nothing published yet — the first posts are on their way.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 

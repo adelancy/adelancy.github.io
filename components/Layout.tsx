@@ -2,13 +2,15 @@ import React from 'react'
 import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
+import { getSiteConfig } from '../lib/site'
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const site = getSiteConfig()
   return (
     <div>
       <Head>
-        <title>Adelancy — Personal Website</title>
-        <meta name="description" content="Personal website and blog" />
+        <title>{site.title}</title>
+        <meta name="description" content={site.description} />
       </Head>
       <Header />
 
