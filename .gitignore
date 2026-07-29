@@ -1,0 +1,54 @@
+# --- Dependencies ---
+node_modules/
+.pnp
+.pnp.js
+vendor/
+.bundle/
+
+# --- Next.js ---
+.next/
+out/
+next-env.d.ts
+
+# --- Jekyll ---
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# --- Generated site config ---
+# Built from _config.yml by scripts/gen-site-config.js on predev/prebuild.
+data/site.json
+
+# --- Build output & caches ---
+build/
+dist/
+coverage/
+*.tsbuildinfo
+
+# --- Environment / secrets ---
+.env
+.env.local
+.env.*.local
+*.pem
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- Editor & OS ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# --- Deploy ---
+.vercel
+
+# --- Local tool settings ---
+.claude/settings.local.json
